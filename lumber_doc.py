@@ -16,8 +16,8 @@
 
 # Critical region coordination
 # This idea was better than my idea by Mohamad Khajavi :D
-# Right_coord =
-# Left_coord =
+# Right_coord = 712 * 450
+# Left_coord = 831 * 450
 
 import sys
 sys.path.append('/usr/local/lib/python2.7/site-packages')
