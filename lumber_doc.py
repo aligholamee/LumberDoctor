@@ -9,6 +9,11 @@
 # ========================================
 #
 
+# The button area coordination:
+#   pos: 634 682
+#   size : 285 * 132
+#   This is when the chrome scale is set to 100% :)
+
 import wx
 app = wx.App()  # Need to create an App instance before doing anything
 has_won = False
