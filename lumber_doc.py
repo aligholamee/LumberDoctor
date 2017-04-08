@@ -15,3 +15,4 @@ import wx
 wx.App()    # Need to create an App instance before doing anything
 screen = wx.ScreenDC()
 size = screen.getSize()
+bmp = wx.emptyBitmap(size[0],size[1])
