@@ -19,20 +19,17 @@
 # Right_coord = 712 * 450
 # Left_coord = 831 * 450
 
-import sys
-sys.path.append('/usr/local/lib/python2.7/site-packages')
-import wx
+
+
 import cv2
+import play_game
+import pyautogui
 
 
-app = wx.App()  # Need to create an App instance before doing anything
 has_won = False
 
 while ~has_won:
-    screen = wx.ScreenDC()
-    size = screen.GetSize()
-    bmp = wx.EmptyBitmap(size[0], size[1])
-    mem = wx.MemoryDC(bmp)
-    mem.Blit(0, 0, size[0], size[1], screen, 0, 0)
-    del mem  # Release bitmap
-    bmp.SaveFile('screenshot.png', wx.BITMAP_TYPE_PNG)
+    image = pyautogui.screenshot()
+    temp_pixel = image.getpixel()
+
+
