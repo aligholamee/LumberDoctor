@@ -30,6 +30,8 @@ has_won = False
 
 while ~has_won:
     image = pyautogui.screenshot()
-    temp_pixel = image.getpixel()
+    right_temp_pixel = image.getpixel(712, 450)
+    left_temp_pixel = image.getpixel(831,450)
+
 
 
