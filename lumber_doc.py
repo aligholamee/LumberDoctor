@@ -26,10 +26,13 @@
 import cv2
 import play_game
 import pyautogui
+import time
 
 
 has_won = False
 
+# Wait until the game runs
+time.sleep(8)
 
 while ~has_won:
     image = pyautogui.screenshot()
