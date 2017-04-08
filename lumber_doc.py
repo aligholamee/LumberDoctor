@@ -9,55 +9,42 @@
 # ========================================
 #
 
-# The button area coordination:
-#
-#
-#   This is when the chrome scale is set to 100% :)
-
-# Critical region coordination
-# This idea was better than my idea by Mohamad Khajavi :D
-# Right_coord = 712 * 450
-# Left_coord = 831 * 450
-
-# This is the placement of Mr lumber jack
-# Right_placement = 834 * 525
-# Left_placement = 715 * 525
-
-
-import play_game
 import pyautogui
 import time
 
 # Wait until the game runs
 time.sleep(5)
 
+image = pyautogui.screenshot()
+
+right_critical_pixel = image.getpixel((826, 418))
+left_critical_pixel = image.getpixel((710, 418))
+
+person_head = image.getpixel((826, 427))
+
+tree_color = (161, 116, 56)
+back_color = (211, 247, 255)
+
 while True:
+    time.sleep(0.15)
     image = pyautogui.screenshot()
+
     right_critical_pixel = image.getpixel((826, 418))
     left_critical_pixel = image.getpixel((710, 418))
 
-    right_place = image.getpixel((823, 494))
-    left_place = image.getpixel((707, 494))
-
-    tree_color = (161, 116, 56)
-    back_color = (211, 247, 255)
-
-    if right_place == (207, 70, 59):
+    person_head = image.getpixel((826, 427))
+    if person_head == (51, 93, 101):
         if right_critical_pixel == back_color:
-            # Right is ok! click right!
-            play_game.click(1)
-            print("Right is OK!")
+            pyautogui.moveTo(900, 1000)
+            pyautogui.click(900, 1000)
         elif right_critical_pixel == tree_color:
-            # Right is a tree, click left
-            play_game.click(0)
-            print("Right is a tree!")
+            pyautogui.moveTo(900, 900)
+            pyautogui.click(900, 900)
 
-    elif left_place == (207, 70, 59):
+    else:
         if left_critical_pixel == back_color:
-            # left is ok! click left!
-            play_game.click(0)
-            print("Left is ok!")
+            pyautogui.moveTo(900, 900)
+            pyautogui.click(900, 900)
         elif left_critical_pixel == tree_color:
-            # left is a tree, click right
-            play_game.click(1)
-            print("Left is a tree!")
+            pyautogui.moveTo(900, 1000)
+            pyautogui.click(900, 1000)
