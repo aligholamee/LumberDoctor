@@ -23,41 +23,41 @@
 # Right_placement = 834 * 525
 # Left_placement = 715 * 525
 
-import cv2
+
 import play_game
 import pyautogui
 import time
-
-
-has_won = False
 
 # Wait until the game runs
 time.sleep(5)
 
 while True:
     image = pyautogui.screenshot()
-    right_temp_pixel = image.getpixel((712,450))
-    left_temp_pixel = image.getpixel((831,450))
-    right_place = image.getpixel((834,525))
-    left_place = image.getpixel((715,525))
-    if right_place == ((207,70,59)):
-        if right_temp_pixel == ((211,247,255)):
+    right_critical_pixel = image.getpixel((823, 494))
+    left_critical_pixel = image.getpixel((707, 494))
+
+    right_place = image.getpixel((823, 494))
+    left_place = image.getpixel((707, 494))
+
+    tree_color = (161, 116, 56)
+    back_color = (211, 247, 255)
+
+    if right_place == (207, 70, 59):
+        if right_critical_pixel == (211, 247, 255):
             # Right is ok! click right!
             play_game.click(1)
             print("Right is OK!")
-        elif right_temp_pixel == (211,247,255):
+        elif right_critical_pixel == (211, 247, 255):
             # Right is a tree, click left
             play_game.click(0)
             print("Right is a tree!")
 
-    elif left_place == (207,70,59):
-        if left_temp_pixel == (211,247,255):
+    elif left_place == (207, 70, 59):
+        if left_critical_pixel == (211, 247, 255):
             # left is ok! click left!
             play_game.click(0)
             print("Left is ok!")
-        elif left_temp_pixel == (211,247,255):
+        elif left_critical_pixel == (211, 247, 255):
             # left is a tree, click right
             play_game.click(1)
             print("Left is a tree!")
-
-
