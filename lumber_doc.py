@@ -14,6 +14,10 @@
 #   size : 285 * 132
 #   This is when the chrome scale is set to 100% :)
 
+# The head of the Mr. Lumber Jack coordination
+#   while on left_pos: 715*470
+#   while on right_pos: 835*470
+
 import wx
 app = wx.App()  # Need to create an App instance before doing anything
 has_won = False
