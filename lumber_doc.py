@@ -36,12 +36,12 @@ time.sleep(8)
 
 while ~has_won:
     image = pyautogui.screenshot()
-    right_temp_pixel = image.getpixel(712, 450)
-    left_temp_pixel = image.getpixel(831,450)
-    right_place = image.getpixel(834,525)
-    left_place = image.getpixel(715,525)
-    if right_place == (207,70,59):
-        if right_temp_pixel == (211,247,255):
+    right_temp_pixel = image.getpixel((712,450))
+    left_temp_pixel = image.getpixel((831,450))
+    right_place = image.getpixel((834,525))
+    left_place = image.getpixel((715,525))
+    if right_place == ((207,70,59)):
+        if right_temp_pixel == ((211,247,255)):
             # Right is ok! click right!
             play_game.click("right")
         elif right_temp_pixel == (211,247,255):
