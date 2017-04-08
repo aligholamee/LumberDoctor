@@ -14,11 +14,17 @@
 #   size : 285 * 132
 #   This is when the chrome scale is set to 100% :)
 
-# The head of the Mr. Lumber Jack coordination
-#   while on left_pos: 715*470
-#   while on right_pos: 835*470
+# Critical region coordination
+# This idea was better than my idea by Mohamad Khajavi :D
+# Right_coord =
+# Left_coord =
 
+import sys
+sys.path.append('/usr/local/lib/python2.7/site-packages')
 import wx
+import cv2
+
+
 app = wx.App()  # Need to create an App instance before doing anything
 has_won = False
 
