@@ -14,3 +14,4 @@ import wx
 # Take an screenshot of the current page
 wx.App()    # Need to create an App instance before doing anything
 screen = wx.ScreenDC()
+size = screen.getSize()
