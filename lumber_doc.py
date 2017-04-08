@@ -32,6 +32,13 @@ while ~has_won:
     image = pyautogui.screenshot()
     right_temp_pixel = image.getpixel(712, 450)
     left_temp_pixel = image.getpixel(831,450)
+    if right_temp_pixel == (211,247,255):
+        # Right is ok! click right!
+        play_game.click("right")
+    elif right_temp_pixel == (211,247,255):
+        # Right is a tree, click left
+        play_game.click("left")
+    elif left_temp_pixel
 
 
 
