@@ -32,9 +32,9 @@ import time
 has_won = False
 
 # Wait until the game runs
-time.sleep(8)
+time.sleep(5)
 
-while ~has_won:
+while True:
     image = pyautogui.screenshot()
     right_temp_pixel = image.getpixel((712,450))
     left_temp_pixel = image.getpixel((831,450))
@@ -43,18 +43,21 @@ while ~has_won:
     if right_place == ((207,70,59)):
         if right_temp_pixel == ((211,247,255)):
             # Right is ok! click right!
-            play_game.click("right")
+            play_game.click(1)
+            print("Right is OK!")
         elif right_temp_pixel == (211,247,255):
             # Right is a tree, click left
-            play_game.click("left")
+            play_game.click(0)
+            print("Right is a tree!")
 
     elif left_place == (207,70,59):
         if left_temp_pixel == (211,247,255):
             # left is ok! click left!
-            play_game.click("left")
+            play_game.click(0)
+            print("Left is ok!")
         elif left_temp_pixel == (211,247,255):
             # left is a tree, click right
-            play_game.click("right")
-
+            play_game.click(1)
+            print("Left is a tree!")
 
 
